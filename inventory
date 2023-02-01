@@ -1,11 +1,5 @@
-[web_servers]
-192.168.0.21
-
-[db_servers]
-192.168.0.22
-
-[file_servers]
-192.168.0.22
-
+[oracle]
+ubuntu21 ansible_host=192.168.0.21 oracle="z1aa|z1sa|z1ea"
+ubuntu22 ansible_host=192.168.0.22 oracle="z1ta"
 [workstations]
-192.168.0.20
+ubuntu ansible_host=192.168.0.20
