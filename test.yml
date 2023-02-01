@@ -1,0 +1,20 @@
+---
+- name: test
+  vars:
+    client: z1aa0001
+  hosts: all
+# when: client is match "(z1aa|z1sa|z1ea|z1al|z1sl|z1el)"
+
+  tasks:
+#    - name: do something
+#      hosts: 192.168.0.22
+#      when: client is match "(z1aa|z1sa|z1ea|z1al|z1sl|z1el)"
+
+    - name: Display hostname
+      command: hostname
+      register: result
+
+    - name: Display result
+      debug:
+        var: result.stdout_lines
+      when: client is match "(z1aa|z1sa|z1ea|z1al|z1sl|z1el)"
